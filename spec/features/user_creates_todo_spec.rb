@@ -4,8 +4,6 @@ feature "User creates todo" do
   scenario "successfully" do
     sign_in
 
-    visit root_path
-
     click_on "Create New ToDo"
     fill_in "Subject", with: "Upcase Trail - Test Driven Rails"
     click_on "Submit"
