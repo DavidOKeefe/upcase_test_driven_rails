@@ -3,11 +3,7 @@ require "rails_helper"
 feature "User creates todo" do
   scenario "successfully" do
     sign_in
-
-    click_on "Create New ToDo"
-    fill_in "Subject", with: "Upcase Trail - Test Driven Rails"
-    click_on "Submit"
-
-    expect(page).to have_css '.todos li', text: "Upcase Trail - Test Driven Rails"
+    create_todo "Upcase Trail - Test Driven Rails"
+    expect(page).to display_todo "Upcase Trail - Test Driven Rails"
   end
 end
